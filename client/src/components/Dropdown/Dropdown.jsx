@@ -51,14 +51,14 @@ export default function Dropdown() {
   const [inputContainer, setInputContainer] = useState([]);
   const [search, setSearch] = useState('');
 
-  const handeVisible = () => {
+  const handleVisible = () => {
     setVisible(styles.menuActive);
   };
-  const handeNeVisible = () => {
+  const handleNeVisible = () => {
     setVisible(styles.menu);
   };
 
-  const handleinput = (e) => {
+  const handleInput = (e) => {
     const indx = inputContainer.indexOf(e.language);
     setInputValue(e);
     { ~indx ? inputContainer.splice(indx, 1) : inputContainer.push(e.language); }
@@ -96,14 +96,14 @@ export default function Dropdown() {
               <img
                 src={images}
                 alt="img"
-                onClick={() => handeNeVisible()}
+                onClick={() => handleNeVisible()}
               />
             )
             : (
               <img
                 src={images}
                 alt="img"
-                onClick={() => handeVisible()}
+                onClick={() => handleVisible()}
               />
             )}
         </div>
@@ -138,7 +138,7 @@ export default function Dropdown() {
                 className={styles.inputRadio}
                 type="checkbox"
                 name={el.language}
-                onChange={() => handleinput(el)}
+                onChange={() => handleInput(el)}
               />
             </div>
           </li>
